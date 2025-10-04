@@ -74,9 +74,42 @@ input:focus {
   color: #fff;
 }
   </style>
+
+  <script src="/path/to/cdn/jquery.slim.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+
+  const input_value = $("#password");
+
+  //disable input from typing
+  $("#password").keypress(function () {
+    return false;
+  });
+
+  //add password
+  $(".calc").click(function () {
+    let value = $(this).val();
+    field(value);
+  });
+
+  function field(value) {
+    input_value.val(input_value.val() + value);
+  }
+
+  $("#clear").click(function () {
+    input_value.val("");
+  });
+
+  $("#enter").click(function () {
+    alert("Your password " + input_value.val() + " added");
+  });
+  
+});
+  </script>
 </head>
 
-  <body>
+<body>
 <div id="pinpad"> 
   <form >
     <input type="password" id="password" /></br>
