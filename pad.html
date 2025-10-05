@@ -103,7 +103,14 @@ input:focus {
 
   $("#enter").click(function () {
     //alert("Your password " + input_value.val() + " added");
-    window.location.href = "/effective-octo-meme/badnumber.html";
+    if (input_value.val() == "12345")
+    {
+      window.location.href = "/effective-octo-meme/goodnumber.html";
+    }
+    else
+    {
+      window.location.href = "/effective-octo-meme/badnumber.html";
+    }
   });
   
 });
